@@ -596,3 +596,14 @@ and NxFWKProcessItemStep.CreateDateTime between '2019-06-07 06:00:00' and '2019-
 group by nxfwkprocessitem.ProcCode,nxfwkprocessitem.name
 
 -- 3E SPECIFICS END
+
+
+-----Wapi Diatribution 
+select NxFWKProcessItemStep.ServerName,   count(*) 'ProcessSteps'
+from nxfwkprocessitem
+        inner join nxfwkprocessitemstep on nxfwkprocessitem.ProcItemID = NxFWKProcessItemStep.ProcItemID
+        where NxFWKProcessItemStep.CreateDateTime between '2021-03-24 01:45:00' and '2021-03-24 06:45:00'
+group by NxFWKProcessItemStep.ServerName
+
+
+
